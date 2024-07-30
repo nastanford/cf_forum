@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-8">
-            <h1 class="mb-4">Welcome to Nightowl Forum</h1>
+            <h1 class="mb-4">Welcome to CF Forum</h1>
             <cfinclude template="./partials/card1.cfm">
             <cfinclude template="./partials/card2.cfm">
         </div>

@@ -1,4 +1,4 @@
-.sql -- Create MEMBER table
+-- Create MEMBER table
 CREATE TABLE MEMBER (
   member_id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE,
