@@ -9,6 +9,7 @@
             <cfinclude template="./partials/card2.cfm">
         </div>
         <div class="col-md-4">
+            <cfinclude template="./partials/login.cfm">
             <cfinclude template="./partials/card3.cfm">
             <cfinclude template="./partials/card4.cfm">
             <cfinclude template="./partials/card5.cfm">
