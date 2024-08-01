@@ -1,6 +1,6 @@
 component{
 
-  this.name = "CF Forum 2";
+  this.name = "CF Forum";
   this.applicationTimeout = createTimeSpan( 30, 0, 0, 0 );
   this.sessionStorage = true;
   this.sessionManagement = true;  
@@ -8,12 +8,13 @@ component{
   this.sessionTimeout = createTimeSpan( 0, 0, 60, 0 );
   this.datasource = "cfforumdb";
   this.weburl = "/cf_forum";
+  this.mappings["/cfcs"] = expandPath("/cf_forum/cfcs");
 
   function onApplicationStart(){}
   function onApplicationEnd( struct applicationScope ) {}
 
   function onSessionStart() {
-    session.user = {};  
+    session.user = new cfcs.userInfo();
   }
   function onSessionEnd( struct sessionScope, struct applicationScope ) {}
 

@@ -13,7 +13,8 @@
         name="username"
         hx-get="./partials/username_exists.cfm"
         hx-target="#usernameError"
-        hx-swap="innerHTML">
+        hx-swap="innerHTML"
+        hx-trigger="keyup changed delay:500ms">
       <div id="usernameError" class="mt-3"></div>
     </div>
     <div class="mb-3">
@@ -25,7 +26,7 @@
       <input type="password" class="form-control" id="password" name="password">
     </div>
     <div>
-      <button type="submit" class="btn btn-primary text-center">Register</button>
+      <button type="submit" id="register_button" class="btn btn-primary text-center">Register</button>
     </div>
   </form>
 </div>

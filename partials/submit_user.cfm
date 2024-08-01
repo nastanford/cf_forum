@@ -20,16 +20,12 @@
       0
     )
   </cfquery>
-
+  
   <cfcatch type="any">
       Error: <cfoutput>#cfcatch.message#</cfoutput>
   </cfcatch>
 </cftry>
 
 
-
-<cfoutput>
-<div class="h4">
-  #username#
-</div>
-</cfoutput>
+<!--- Display Username --->
+<cfoutput><div class="h4">#username#</div></cfoutput>
