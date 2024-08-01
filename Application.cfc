@@ -1,7 +1,9 @@
 component{
 
-  this.name = "CF Forum";
+  this.name = "CF Forum 2";
   this.applicationTimeout = createTimeSpan( 30, 0, 0, 0 );
+  this.sessionStorage = true;
+  this.sessionManagement = true;  
   this.sessionStorage = true;
   this.sessionTimeout = createTimeSpan( 0, 0, 60, 0 );
   this.datasource = "cfforumdb";
@@ -10,7 +12,9 @@ component{
   function onApplicationStart(){}
   function onApplicationEnd( struct applicationScope ) {}
 
-  function onSessionStart() {}
+  function onSessionStart() {
+    session.user = {};  
+  }
   function onSessionEnd( struct sessionScope, struct applicationScope ) {}
 
   function onRequestStart( string targetPage ) {}
