@@ -1,4 +1,8 @@
 <cfsetting showdebugoutput=false>
+<cfscript>
+  passwordHasher = new cfcs.utils.PasswordHasher();
+  hashedPassword = passwordHasher.hashPassword( "#form.password#" );
+</cfscript>
 <cftry>
   <cfquery name="insert">
     insert into member
@@ -14,7 +18,7 @@
     (
       <cfqueryparam value="#form.username#" cfsqltype="cf_sql_varchar">,
       <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar">,
-      <cfqueryparam value="#form.password#" cfsqltype="cf_sql_varchar">,
+      <cfqueryparam value="#hashedPassword#" cfsqltype="cf_sql_varchar">,
       <cfqueryparam value="#now()#" cfsqltype="cf_sql_timestamp">,
       <cfqueryparam value="#now()#" cfsqltype="cf_sql_timestamp">,
       0

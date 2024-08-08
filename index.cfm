@@ -11,7 +11,7 @@
     <div class="col-md-4">
       <div id="loginScreen" class="rounded p-3 mb-1">
         <cfinclude template="./partials/login.cfm">
-      </div>
+      </div>      
       <cfinclude template="./partials/card3.cfm">
       <cfinclude template="./partials/card4.cfm">
       <cfinclude template="./partials/card5.cfm">

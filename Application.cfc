@@ -1,6 +1,6 @@
 component{
 
-  this.name = "CF Forum";
+  this.name = "CF Forum 2";
   this.applicationTimeout = createTimeSpan( 30, 0, 0, 0 );
   this.sessionStorage = true;
   this.sessionManagement = true;  
@@ -14,7 +14,7 @@ component{
   function onApplicationEnd( struct applicationScope ) {}
 
   function onSessionStart() {
-    session.user = new cfcs.userInfo();
+    session.user = new cfcs.models.User();
   }
   function onSessionEnd( struct sessionScope, struct applicationScope ) {}
 

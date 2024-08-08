@@ -1,6 +1,3 @@
-
-<cfdump var="#session#">
-
   <form 
     hx-post="./partials/login_check.cfm" 
     hx-target="#loginScreen"
