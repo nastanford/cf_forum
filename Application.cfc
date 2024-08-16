@@ -1,6 +1,6 @@
 component{
 
-  this.name = "CF Forum 2";
+  this.name = "CF Forum 3";
   this.applicationTimeout = createTimeSpan( 30, 0, 0, 0 );
   this.sessionStorage = true;
   this.sessionManagement = true;  

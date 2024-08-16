@@ -24,12 +24,45 @@
       0
     )
   </cfquery>
-  
+
   <cfcatch type="any">
       Error: <cfoutput>#cfcatch.message#</cfoutput>
   </cfcatch>
 </cftry>
 
+<!---
+<cfquery name="getLastID">
+  select LAST_INSERT_ID() AS newID
+</cfquery>
 
+--->
+
+<cfquery name="getUserInfo">
+  select * from member
+  where member_id = 5
+</cfquery>
+
+<cfscript>
+  session.user.setId(5);
+  session.user.setUsername(getUserInfo.username);
+  session.user.setEmail(getUserInfo.email);
+  session.user.setIsAuthenticated(True);
+    
+</cfscript>
+
+
+<!---
+
+
+id
+username	
+password	
+email	
+created_at	
+login_at	
+isAuthenticated	
+roles	
+
+--->
 <!--- Display Username --->
 <cfoutput><div class="h4">#username#</div></cfoutput>

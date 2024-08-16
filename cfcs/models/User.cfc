@@ -1,6 +1,6 @@
 
 component displayname="User" output="false" accessors="true"  {
-  property name="id" type="integer" default="0";
+  property name="id" type="numeric" default="0";
   property name="username" type="string" default="";
   property name="password" type="string" default="";
   property name="email" type="string" default="";
@@ -14,6 +14,9 @@ component displayname="User" output="false" accessors="true"  {
   }
 }
 /*
+  property name="id" type="numeric" default="0";
+  property name="id" type="integer" default="0";
+
   x = []  
   y = {} 
   SACS  - Sqauares for Arrays and Curly Braces for Sturctures.
