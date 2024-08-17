@@ -1,11 +1,13 @@
-<cfsetting showdebugoutput=false>
+<cfsetting showdebugoutput="false">
+
 <cfscript>
   passwordHasher = new cfcs.utils.PasswordHasher();
-  hashedPassword = passwordHasher.hashPassword( "#form.password#" );
+  hashedPassword = passwordHasher.hashPassword("#form.password#");
 </cfscript>
+
 <cftry>
-  <cfquery name="insert">
-    insert into member
+  <cfquery name="insert" result="queryResult">
+    INSERT INTO members
     (
       username, 
       email, 
@@ -14,7 +16,7 @@
       last_activity,
       post_count
     )
-    values
+    VALUES
     (
       <cfqueryparam value="#form.username#" cfsqltype="cf_sql_varchar">,
       <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar">,
@@ -25,20 +27,19 @@
     )
   </cfquery>
 
+  <!--- Retrieve the last inserted ID --->
+  <cfset newMemberID = queryResult.generatedKey>
+  <cfset session.user.setID(queryResult.generatedKey)>
   <cfcatch type="any">
-      Error: <cfoutput>#cfcatch.message#</cfoutput>
+    Error: <cfoutput>#cfcatch.message#</cfoutput>
   </cfcatch>
 </cftry>
 
-<!---
-<cfquery name="getLastID">
-  select LAST_INSERT_ID() AS newID
-</cfquery>
 
---->
+<!---
 
 <cfquery name="getUserInfo">
-  select * from member
+  select * from memberss
   where member_id = 5
 </cfquery>
 
@@ -49,7 +50,7 @@
   session.user.setIsAuthenticated(True);
     
 </cfscript>
-
+--->
 
 <!---
 

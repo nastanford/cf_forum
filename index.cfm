@@ -1,4 +1,5 @@
 
+<!---
 <cfquery name="qryUserInfo">
   select * from member
   where member_id = 8
@@ -15,6 +16,8 @@
   session.user.setLogin_at(qryUserInfo.updated_at)
 </cfscript>
 
+--->
+
 
 <cfinclude template="./includes/header.cfm">
 <cfinclude template="./includes/navbar.cfm">
@@ -29,6 +32,10 @@
       <cfinclude template="./partials/card2.cfm">
     </div>
     <div class="col-md-4">
+    <cfoutput>
+      #session.user.getIsAuthenticated()#
+      #session.user.getUsername()#
+    </cfoutput>
       <div id="loginScreen" class="rounded p-3 mb-1">
         <cfinclude template="./partials/login.cfm">
       </div>      

@@ -1,41 +1,47 @@
 ```mermaid
 erDiagram
-    MEMBER ||--o{ POST : creates
-    MEMBER ||--o{ THREAD : starts
-    MEMBER {
-        int member_id PK
-        string username
-        string email
-        datetime join_date
-        int post_count
-        datetime last_activity
-    }
-    CATEGORY ||--o{ THREAD : contains
-    CATEGORY {
-        int category_id PK
-        string name
-        string description
-        int thread_count
-        int post_count
-    }
-    THREAD ||--o{ POST : contains
-    THREAD {
-        int thread_id PK
-        int category_id FK
-        int member_id FK
-        string title
-        datetime created_at
-        datetime last_post_at
-        int view_count
-        int reply_count
-    }
-    POST {
-        int post_id PK
-        int thread_id FK
-        int member_id FK
-        text content
-        datetime created_at
-        datetime updated_at
-    }
+  MEMBERS {
+    INT id PK "increment"
+    VARCHAR(50) username "unique, not null"
+    VARCHAR(100) email "unique, not null"
+    VARCHAR(255) password "not null"
+    DATETIME join_date "not null, default: CURRENT_TIMESTAMP"
+    INT post_count "not null, default: 0"
+    DATETIME last_activity "not null, default: CURRENT_TIMESTAMP"
+  }
+
+  CATEGORIES {
+    INT id PK "increment"
+    VARCHAR(100) name "not null"
+    TEXT description
+    INT thread_count "not null, default: 0"
+    INT post_count "not null, default: 0"
+  }
+
+  THREADS {
+    INT id PK "increment"
+    INT category_id "not null"
+    INT member_id "not null"
+    VARCHAR(255) title "not null"
+    DATETIME created_at "not null, default: CURRENT_TIMESTAMP"
+    DATETIME last_post_at "not null, default: CURRENT_TIMESTAMP"
+    INT view_count "not null, default: 0"
+    INT reply_count "not null, default: 0"
+  }
+
+  POSTS {
+    INT id PK "increment"
+    INT thread_id "not null"
+    INT member_id "not null"
+    TEXT content "not null"
+    DATETIME created_at "not null, default: CURRENT_TIMESTAMP"
+    DATETIME updated_at "not null, default: CURRENT_TIMESTAMP"
+  }
+
+  MEMBERS ||--o{ THREADS : "id < member_id"
+  CATEGORIES ||--o{ THREADS : "id < category_id"
+  THREADS ||--o{ POSTS : "id < thread_id"
+  MEMBERS ||--o{ POSTS : "id < member_id"
+
 
 ```
