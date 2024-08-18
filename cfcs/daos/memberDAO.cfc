@@ -42,9 +42,8 @@ function createMember(required struct member) {
     );
 
     // Retrieve the generated key
-    var newMemberID = queryResult.generatedKey;
     
-    return newMemberID;
+    return;
   } catch (any e) {
     // Log the error or handle it as needed
     writeLog(type="error", text="Error in createMember: #e.message#");
@@ -53,53 +52,6 @@ function createMember(required struct member) {
 }
 
 
-/*
-function createMember(required struct member) {
-  var passwordHasher = new cfcs.utils.PasswordHasher();
-  var hashedPassword = passwordHasher.hashPassword(member.password);
-
-  try {
-    var queryResult = queryExecute(
-      "INSERT INTO MEMBERS (
-        username, 
-        email, 
-        password,
-        created_at,
-        login_at,
-        post_count,
-        role_id
-      ) VALUES (
-        :username,
-        :email,
-        :password,
-        :created_at,
-        :login_at,
-        :post_count,
-        :role_id
-      )",
-      {
-        username: {value: member.username, cfsqltype: "cf_sql_varchar"},
-        email: {value: member.email, cfsqltype: "cf_sql_varchar"},
-        password: {value: hashedPassword, cfsqltype: "cf_sql_varchar"},
-        created_at: {value: now(), cfsqltype: "cf_sql_timestamp"},
-        login_at: {value: now(), cfsqltype: "cf_sql_timestamp"},
-        post_count: {value: 0, cfsqltype: "cf_sql_integer"},
-        role_id: {value: 1, cfsqltype: "cf_sql_integer"}
-      },
-      {result: "queryResult"}
-    );
-    // var newMemberID = queryResult.cf_sql_rowcount;
-    // var newMemberID = queryResult.GENERATEDKEY;
-    // var newMemberID = queryResult.generated_key;
-    
-    return queryResult.GENERATEDKEY;
-  } catch (any e) {
-    // Log the error or handle it as needed
-    writeLog(type="error", text="Error in createUser: #e.message#");
-    return e.message;
-  }
-}
-*/
 // Method to update a Member
 function updateMember(required struct member, required numeric memberID) {
   try {
@@ -187,6 +139,46 @@ function updateMemberPassword(required struct member, required numeric memberID)
     
     return member;
   }
+
+
+ // Method to get a member by username
+// Method to get a member by username
+function getMemberByName(required string username) {
+  var member = {};
+  
+  try {
+    var qMember = queryExecute(
+      "SELECT id, username, email, created_at, login_at, post_count, role_id 
+        FROM MEMBERS 
+        WHERE username = :username",
+      {username: {value: username, cfsqltype: "cf_sql_varchar"}},
+      {returntype: "query"}
+    );
+    
+    if (qMember.recordCount == 1) {
+      member = {
+        id: qMember.id,
+        username: qMember.username,
+        email: qMember.email,
+        createdAt: qMember.created_at,
+        loginAt: qMember.login_at,
+        postCount: qMember.post_count,
+        roleID: qMember.role_id
+      };
+    }
+  } catch (any e) {
+    // Display the error on screen
+    writeOutput("Error in getUserByID: #e.message#");
+    
+    // Optionally, log the error as well
+    writeLog(type="error", text="Error in getUserByID: #e.message#");
+
+    // Rethrow the error to handle it at a higher level
+    rethrow;
+  }
+  
+  return member;
+}
 
 
 // Method to delete a user

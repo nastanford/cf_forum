@@ -4,10 +4,10 @@ component displayname="User" output="false" accessors="true"  {
   property name="username" type="string" default="";
   property name="password" type="string" default="";
   property name="email" type="string" default="";
-  property name="created_at" type="date" default="";
-  property name="login_at" type="date" default="";
+  property name="created_at" type="datetime" default="";
+  property name="login_at" type="datetime" default="";
   property name="isAuthenticated" type="boolean" default="false";
-  property name="roles" type="array" default="[]";
+  property name="roles" type="numeric" default="";
 
   public function init(){
     return this;

@@ -1,6 +1,7 @@
 <cfinclude template="./includes/header.cfm">
 <cfinclude template="./includes/navbar.cfm">
 
+
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-8">
@@ -10,8 +11,11 @@
     </div>
     <div class="col-md-4">
       <div id="loginScreen" class="rounded p-3 mb-1">
-        <cfinclude template="./partials/userInfo.cfm">
-        <cfinclude template="./partials/login.cfm">
+        <cfif session.user.getUsername() neq "">
+          <cfinclude template="./partials/userInfo.cfm">
+        <cfelse>
+          <cfinclude template="./partials/login.cfm">
+        </cfif>
       </div>      
       <cfinclude template="./partials/card3.cfm">
       <cfinclude template="./partials/card4.cfm">
