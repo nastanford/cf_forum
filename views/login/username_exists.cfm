@@ -1,11 +1,13 @@
-<cfsetting showdebugoutput=false>
-
+Username Exists
+<cfsetting showDebugOutput = "no" >
+<!---
 <!--- Check if the username exists --->
 <cfquery name="checkUsernameExists">
   SELECT *
   FROM member
   WHERE username = <cfqueryparam value="#url.username#" cfsqltype="cf_sql_varchar">
 </cfquery>
+
 <!--- pass either an error back or nothing back. --->
 <cfif checkUsernameExists.recordcount gt 0>
   <cfoutput>
@@ -18,6 +20,6 @@
 <cfelse>
   <button type="submit" id="register_button" hx-swap-oob="true" class="btn btn-primary text-center">Register</button>
 </cfif>
-
+--->
 
 

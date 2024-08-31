@@ -1,6 +1,7 @@
+<cfoutput>
   <form 
-    hx-post="./partials/login_check.cfm" 
-    hx-target="#loginScreen"
+    hx-post="#this.weburl#/views/login/login_check.cfm" 
+    hx-target="##loginScreen"
     hx-swap="innerHTML">
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
@@ -13,9 +14,10 @@
     <div class="mb-3">
       <button type="submit" class="btn btn-primary">Login</button>
       <a href=""
-      hx-get="./partials/register.cfm"
-      hx-target="#loginScreen"
+      hx-get="#this.weburl#/views/login/register.cfm"
+      hx-target="##loginScreen"
       hx-swap="innerHTML"
       class="btn btn-secondary">Register</a>
     </div>
   </form>
+</cfoutput>

@@ -11,14 +11,15 @@
   // session.user.setCreatedAt(getUserInfo.created_at);
   // session.user.setLoginAt(getUserInfo.login_at);
 </cfscript>
-
-<div id="userInfo" class="container-fluid">
-  <div class="row">
-    <div class="col-10">
-      <cfoutput><div class="h4">#session.user.getUsername()#</div></cfoutput>
-    </div>
-    <div class="col-2 text-center">
-      <button class="btn btn-sm btn-secondary">Logout</button>
+<cfoutput>
+  <div id="userInfo" class="container-fluid">
+    <div class="row">
+      <div class="col-10">
+        <div class="h4">#session.user.getUsername()#</div>
+      </div>
+      <div class="col-2 text-center">
+        <button class="btn btn-sm btn-secondary">Logout</button>
+      </div>
     </div>
   </div>
-</div>
+</cfoutput>
