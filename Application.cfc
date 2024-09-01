@@ -1,5 +1,5 @@
 component{
-  this.name = "CF Forum";
+  this.name = "CF Forum 1";
   this.applicationTimeout = createTimeSpan( 30, 0, 0, 0 );
   this.sessionManagement = true;  
   this.sessionStorage = true;

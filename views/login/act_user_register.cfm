@@ -1,8 +1,6 @@
 <cfsetting showdebugoutput="false">
-
 <cfset session.isLoggedIn = true>
-
-<cfdump var="#form#">
+<cfset session.username = form.username>
 
 <cfoutput>
   <div id="userInfo" class="container-fluid">
@@ -16,3 +14,5 @@
     </div>
   </div>
 </cfoutput>
+
+

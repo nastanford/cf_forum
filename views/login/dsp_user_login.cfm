@@ -1,6 +1,6 @@
 <cfoutput>
   <form 
-    hx-post="#this.weburl#/views/login/act_login_check.cfm" 
+    hx-post="#this.weburl#/views/login/act_user_check.cfm" 
     hx-target="##loginScreen"
     hx-swap="innerHTML">
     <div class="mb-3">
@@ -14,7 +14,7 @@
     <div class="mb-3">
       <button type="submit" class="btn btn-primary">Login</button>
       <a href=""
-      hx-get="#this.weburl#/views/login/register_form.cfm"
+      hx-get="#this.weburl#/views/login/dsp_user_register.cfm"
       hx-target="##loginScreen"
       hx-swap="innerHTML"
       class="btn btn-secondary">Register</a>
