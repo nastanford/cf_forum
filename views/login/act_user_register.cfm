@@ -1,18 +1,4 @@
 <cfsetting showdebugoutput="false">
 <cfset session.isLoggedIn = true>
 <cfset session.username = form.username>
-
-<cfoutput>
-  <div id="userInfo" class="container-fluid">
-    <div class="row">
-      <div class="col-10">
-        <div class="h4"></div>
-      </div>
-      <div class="col-2 text-center">
-        <button class="btn btn-sm btn-secondary">Logout</button>
-      </div>
-    </div>
-  </div>
-</cfoutput>
-
-
+<cfinclude template="dsp_user_details.cfm">
