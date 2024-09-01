@@ -2,7 +2,7 @@
 <cfoutput>
   <div class="container col-12">
     <form 
-      hx-post="#this.weburl#/login/submit_user.cfm" 
+      hx-post="#this.weburl#/login/act_submit_user.cfm" 
       hx-target="##loginScreen"
       hx-swap="innerHTML">
 

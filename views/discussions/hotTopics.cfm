@@ -4,17 +4,17 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <h6>
-          <a href="/thread/4" class="text-light">
+          <a href="/thread/4" class="">
             The future of web development: What to expect in 2024
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/futurist" class="text-light">
+          <a href="/user/futurist" class="">
             Futurist
           </a>{' '}
           in{' '}
-          <a href="/category/web-dev" class="text-light">
+          <a href="/category/web-dev" class="">
             Web Development
           </a>
         </p>
@@ -22,17 +22,17 @@
       </li>
       <li class="list-group-item">
         <h6>
-          <a href="/thread/5" class="text-light">
+          <a href="/thread/5" class="">
             Cybersecurity best practices for remote work
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/securityguru" class="text-light">
+          <a href="/user/securityguru" class="">
             SecurityGuru
           </a>{' '}
           in{' '}
-          <a href="/category/security" class="text-light">
+          <a href="/category/security" class="">
             Cybersecurity
           </a>
         </p>
@@ -40,17 +40,17 @@
       </li>
       <li class="list-group-item">
         <h6>
-          <a href="/thread/6" class="text-light">
+          <a href="/thread/6" class="">
             Optimizing database performance in high-traffic applications
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/dbmaster" class="text-light">
+          <a href="/user/dbmaster" class="">
             DBMaster
           </a>{' '}
           in{' '}
-          <a href="/category/databases" class="text-light">
+          <a href="/category/databases" class="">
             Databases
           </a>
         </p>
