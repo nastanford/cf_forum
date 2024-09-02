@@ -17,7 +17,7 @@
       hx-get="#this.weburl#/views/login/dsp_user_register.cfm"
       hx-target="##loginScreen"
       hx-swap="innerHTML"
-      class="btn btn-secondary">Register</a>
+      class="btn btn-outline-secondary">Register</a>
     </div>
   </form>
 </cfoutput>

@@ -5,14 +5,13 @@
       hx-post="#this.weburl#/views/login/act_user_register.cfm" 
       hx-target="##loginScreen"
       hx-swap="innerHTML">
-
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input type="text" 
           class="form-control" 
           id="username" 
           name="username"
-          hx-get="#this.weburl#/login/dsp_user_check_name.cfm"
+          hx-get="#this.weburl#/views/login/dsp_user_check_name.cfm"
           hx-target="##usernameError"
           hx-swap="innerHTML"
           hx-trigger="keyup changed delay:500ms">
