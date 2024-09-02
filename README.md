@@ -18,8 +18,25 @@ This is a simple forum built with ColdFusion and HTMX. It is a basic forum that 
 ## Good Practice
 > Setting up personal coding standards, even if you're working alone, helps you stay organized and focused on each file's purpose. Adopting consistent standards, even if they differ from work, makes it easier to adapt, maintain your code, and collaborate with others later on.
 
+## inside of queries
+> Style: Going to try to use the "Leading Comma" and "Leading And" 
+
+#### Example:
+```sql
+SELECT 
+    first_name
+   ,last_name
+   ,email
+   ,phone_number
+FROM 
+    customers
+WHERE 
+    status = 'active'
+AND city = 'New York'
+AND registration_date >= '2023-01-01'
+```
 
 ## ERD
-[ERD](documentation/erd.md)
+[Link to the ERD](documentation/erd.md)
 
 

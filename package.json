@@ -1,0 +1,17 @@
+{
+  "name": "cf_forum",
+  "version": "1.0.0",
+  "description": "Example ColdFusion Forum for learning",
+  "main": "index.cfm",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Stanford Sr",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
