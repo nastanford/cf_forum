@@ -57,19 +57,41 @@ ALTER TABLE `POSTS` ADD FOREIGN KEY (`member_id`) REFERENCES `MEMBERS` (`id`);
 
 ALTER TABLE `MEMBERS` ADD FOREIGN KEY (`role_id`) REFERENCES `Roles` (`id`);
 
--- Insert Roles before Members due to foreign key relationship
+-- Insert Roles
 insert into `roles` (name,description) values ('User','General User');
+insert into `roles` (name,description) values ('Moderator','Forum Moderator');
+insert into `roles` (name,description) values ('Admin','Forum Administrator');
 
--- Insert fake members
-INSERT INTO members (username, email, password, created_at, login_at, post_count, role_id)
-VALUES 
-  ('user1', 'user1@example.com', 'hashedpassword1', NOW(), NOW(), 0,1),
-  ('user2', 'user2@example.com', 'hashedpassword2', NOW(), NOW(), 0,1),
-  ('user3', 'user3@example.com', 'hashedpassword3', NOW(), NOW(), 0,1),
-  ('user4', 'user4@example.com', 'hashedpassword4', NOW(), NOW(), 0,1),
-  ('user5', 'user5@example.com', 'hashedpassword5', NOW(), NOW(), 0,1),
-  ('user6', 'user6@example.com', 'hashedpassword6', NOW(), NOW(), 0,1),
-  ('user7', 'user7@example.com', 'hashedpassword7', NOW(), NOW(), 0,1),
-  ('user8', 'user8@example.com', 'hashedpassword8', NOW(), NOW(), 0,1),
-  ('user9', 'user9@example.com', 'hashedpassword9', NOW(), NOW(), 0,1),
-  ('user10', 'user10@example.com', 'hashedpassword10', NOW(), NOW(), 0,1);
+-- Insert Members
+insert into `members` (username,email,password,created_at,login_at,post_count,role_id) 
+values ('user1','user1@example.com','5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8',now(),now(),0,1);
+insert into `members` (username,email,password,created_at,login_at,post_count,role_id) 
+values ('user2','user2@example.com','5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8',now(),now(),0,1);
+insert into `members` (username,email,password,created_at,login_at,post_count,role_id) 
+values ('moderator1','moderator1@example.com','5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8',now(),now(),0,2);
+insert into `members` (username,email,password,created_at,login_at,post_count,role_id) 
+values ('admin1','admin1@example.com','5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8',now(),now(),0,3);
+
+-- Insert Categories
+insert into `categories` (name,description,thread_count,post_count) 
+values ('General Discussion','General Discussion about anything',0,0);
+insert into `categories` (name,description,thread_count,post_count) 
+values ('Programming','Programming and coding',0,0);
+insert into `categories` (name,description,thread_count,post_count) 
+values ('Off Topic','Off topic discussions',0,0);
+
+-- Insert Threads
+insert into `threads` (category_id,member_id,title,created_at,last_post_at,view_count,reply_count) 
+values (1,1,'Hello World!',now(),now(),0,0);
+insert into `threads` (category_id,member_id,title,created_at,last_post_at,view_count,reply_count) 
+values (2,2,'How to code in Python',now(),now(),0,0);
+insert into `threads` (category_id,member_id,title,created_at,last_post_at,view_count,reply_count) 
+values (3,1,'What is your favorite hobby?',now(),now(),0,0);
+
+-- Insert Posts
+insert into `posts` (thread_id,member_id,content,created_at,updated_at) 
+values (1,1,'Hello everyone! This is my first post.',now(),now());
+insert into `posts` (thread_id,member_id,content,created_at,updated_at) 
+values (2,2,'I am new to Python and need some help.',now(),now());
+insert into `posts` (thread_id,member_id,content,created_at,updated_at) 
+values (3,1,'I love playing basketball in my free time.',now(),now());
