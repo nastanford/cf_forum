@@ -39,4 +39,4 @@ AND registration_date >= '2023-01-01'
 ## ERD
 [Link to the ERD](documentation/erd.md)
 
-
+ > Keep Coding!
