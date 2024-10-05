@@ -2,15 +2,18 @@
 <cfset session.isLoggedIn = true>
 <cfset session.username = form.username>
 
-
 <cfquery name="insertMember">
-  insert into  members
-  (username, email, password)
+  insert into members
+  (
+    username
+    ,email
+    ,password
+  )
   values
   (
-    <cfqueryparam value="#form.username#" cfsqltype="cf_sql_varchar">,
-    <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar">,
-    <cfqueryparam value="#hash(form.password, "SHA-256")#" cfsqltype="cf_sql_varchar">    
+    <cfqueryparam value="#form.username#" cfsqltype="cf_sql_varchar">
+    ,<cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar">
+    ,<cfqueryparam value="#hash(form.password, "SHA-256")#" cfsqltype="cf_sql_varchar">    
   )
 </cfquery>
 <cfinclude template="dsp_user_details.cfm">

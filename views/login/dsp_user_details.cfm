@@ -10,7 +10,7 @@
           hx-post="#this.weburl#/views/login/act_user_logout.cfm" 
           hx-target="##loginScreen"
           hx-swap="innerHTML"
-          class="btn btn-sm btn-secondary"          
+          class="btn btn-sm btn-outline-dark"          
           >Logout</a>
       </div>
     </div>

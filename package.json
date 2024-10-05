@@ -7,11 +7,22 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch assets/css/bootstrap.scss:assets/css/bootstrap.css --style expanded --quiet",
+    "sass-min": "sass assets/css/bootstrap.scss:assets/css/bootstrap.min.css --style compressed --quiet",
+    "copy-bootstrap-js": "cpy node_modules/bootstrap/dist/js/bootstrap.min.js assets/js --flat",
+    "copy-htmx-js": "cpy node_modules/htmx.org/dist/htmx.min.js assets/js --no-parents --flat",
+    "build-css": "npm-run-all --parallel sass sass-min",
+    "build-js": "npm-run-all copy-bootstrap-js copy-htmx-js",
+    "build": "npm-run-all --parallel build-css build-js"
   },
   "author": "Nathan Stanford Sr",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.3.3"
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "cpy-cli": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.8",
+    "uglify-js": "^3.19.3",
+    "htmx.org": "^2.0.1"  
   }
 }

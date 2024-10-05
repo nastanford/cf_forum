@@ -5,7 +5,7 @@
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <div class="fw-bold">
-            <a href="/user/nightcoder" class="text-light">
+            <a href="/user/nightcoder" class="link-primary">
               NightCoder
             </a>
           </div>
@@ -16,7 +16,7 @@
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <div class="fw-bold">
-            <a href="/user/webwizard" class="text-light">
+            <a href="/user/webwizard" class="link-primary">
               WebWizard
             </a>
           </div>
@@ -27,7 +27,7 @@
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <div class="fw-bold">
-            <a href="/user/pythonista" class="text-light">
+            <a href="/user/pythonista" class="link-primary">
               Pythonista
             </a>
           </div>

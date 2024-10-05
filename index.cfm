@@ -3,7 +3,9 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-8">
-      <h1 class="mb-4">Welcome to CF Forum</h1>
+      <cfif session.isLoggedIn>
+        <button class="btn btn-sm btn-accent1 mb-2" type="submit">New Post</button>
+      </cfif>
       <cfinclude template="./views/discussions/latest.cfm">
       <cfinclude template="./views/discussions/hotTopics.cfm">
     </div>

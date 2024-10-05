@@ -4,17 +4,17 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
         <h6>
-          <a href="/thread/4" class="link-light">
+          <a href="/thread/4" class="link-primary">
             The future of web development: What to expect in 2024
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/futurist" class="link-light">
+          <a href="/user/futurist" class="link-primary">
             Futurist
           </a>{' '}
           in{' '}
-          <a href="/category/web-dev" class="link-light">
+          <a href="/category/web-dev" class="link-primary">
             Web Development
           </a>
         </p>
@@ -22,17 +22,17 @@
       </li>
       <li class="list-group-item">
         <h6>
-          <a href="/thread/5" class="link-light">
+          <a href="/thread/5" class="link-primary">
             Cybersecurity best practices for remote work
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/securityguru" class="link-light">
+          <a href="/user/securityguru" class="link-primary">
             SecurityGuru
           </a>{' '}
           in{' '}
-          <a href="/category/security" class="link-light">
+          <a href="/category/security" class="link-primary">
             Cybersecurity
           </a>
         </p>
@@ -40,17 +40,17 @@
       </li>
       <li class="list-group-item">
         <h6>
-          <a href="/thread/6" class="link-light">
+          <a href="/thread/6" class="link-primary">
             Optimizing database performance in high-traffic applications
           </a>
         </h6>
         <p class="mb-1">
           Started by{' '}
-          <a href="/user/dbmaster" class="link-light">
+          <a href="/user/dbmaster" class="link-primary">
             DBMaster
           </a>{' '}
           in{' '}
-          <a href="/category/databases" class="link-light">
+          <a href="/category/databases" class="link-primary">
             Databases
           </a>
         </p>

@@ -8,13 +8,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#this.weburl#/">Home</a>
+          <a class="nav-link #(cgi.script_name EQ '#this.weburl#/index.cfm' ? 'active' : '')#" aria-current="page" href="#this.weburl#/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#this.weburl#/views/categories/index.cfm">Categories</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#this.weburl#/views/members/index.cfm">Members</a>
+          <a class="nav-link #(cgi.script_name EQ '#this.weburl#/views/categories/index.cfm' ? 'active' : '')#" href="#this.weburl#/views/categories/">Categories</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -25,3 +22,4 @@
     </div>
   </nav>
 </cfoutput>
+

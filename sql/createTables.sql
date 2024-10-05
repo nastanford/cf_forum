@@ -1,5 +1,5 @@
-drop database if exists cfforumdb;
-create database cfforumdb;
+-- drop database if exists cfforumdb;
+-- create database cfforumdb;
 use cfforumdb;
 
 CREATE TABLE IF NOT EXISTS `MEMBERS` (

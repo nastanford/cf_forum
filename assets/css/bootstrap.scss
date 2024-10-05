@@ -1,16 +1,17 @@
 $white: #ffffff;
 
 $theme-colors: (
-    "light":      #896fbc,
-    "dark":       #1b1734,
-    "primary":    #420264,
-    "secondary":  #5c038c,
-    "info":       #8a46b3,
-    "accent1":    #444456,
-    "accent2":    #5d71a9,
-    "accent3":    #bab3c4,
-    "success":    #28a163,
-    "warning":    #e0cb29,
-    "danger":     #ed2515,
+    "light":      #dbddc6,
+    "dark":       #000100,
+    "primary":    #102d48,
+    "secondary":  #1776a3,
+    "info":       #3aadf4,
+    "accent1":    #91b657,
+    "accent2":    #e8e845,
+    "accent3":    #dede67,
+    "success":    #12bf6b,
+    "warning":    #ecd10f,
+    "danger":     #fe1713,
 );
+ 
 @import "../../node_modules/bootstrap/scss/bootstrap";
